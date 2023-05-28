@@ -9,7 +9,7 @@ from AniPlay.plugins.stats import day, over
 @app.on_message(filters.command(['start', 'ping', 'help', 'alive']))
 async def start(_, message: Message):
     try:
-        await message.reply_text('Bot Is Online...\nSearch Animes Using /search or /s\n\n Join - @GreyMatter_Bots for More...')
+        await message.reply_text('#JaiShreeRam🚩,\nI‘m**ANIME SEARCH BOT** Created by-  **@StupidBoi69**.\n\n**NOTE:** To Get Started, Simply Use\n(**"/s" or "/search"**)\nThen [**TYPE THE NAME OF ANIME**] You‘re Looking For And We‘ll Search Our Database to Find it For You.\n\n(**HINT:** Choose Server5 or Server7 or Server11 for Downloading.)\n\n╔══════════════════════╗\n┣**CORRECT WAY TO SEARCH ANIME-**\n┃/s One Piece ✅\n┃/search Naruto ✅\n┃\n┣**WRONG WAY TO SEARCH ANIME-**\n┃/s One Piece Episode 69 ❎\n┃/s Bleach English Dub ❎\n╚══════════════════════╝\n\n@AnimeDownloaderChat_Bot.')
     except:
         return
 
