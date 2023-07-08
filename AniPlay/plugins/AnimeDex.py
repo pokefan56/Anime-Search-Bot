@@ -59,7 +59,7 @@ class AnimeDex:
         durl = []
         if dub:
             for i in dub.find_all('div', 'sitem'):
-                url = 'https://animedex.live' + \
+                url = 'http://home.animedex.live' + \
                     i.find('a').get('data-value').split(' ')[0]
                 durl.append((i.text.strip(), url))
 
