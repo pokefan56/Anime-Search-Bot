@@ -17,19 +17,19 @@ async def start(_, message: Message):
 QUERY = '**Search Results:** `{}`'
 
 
-@app.on_message(filters.command(['search', 's', 'giveme', 'animename']))
+@app.on_message(filters.command(['search', 's', 'gimme', 'iwant', 'find', '']))
 async def searchCMD(_, message: Message):
     try:
         user = message.from_user.id
         query = ' '.join(message.command[1:])
         if query == '':
-            return await message.reply_text('Give me something to search ^_^')
+            return await message.reply_text('Give me something to search;🤬🖕')
         data = AnimeDex.search(query)
         button = BTN.searchCMD(user, data, query)
         await message.reply_text(QUERY.format(query), reply_markup=button)
     except Exception as e:
         try:
-            return await message.reply_text('**Anime Not Found...**\n\nProbably Incorrect Name, Try again')
+            return await message.reply_text('**Anime Not Found...**\n\nMaybe Incorrect Name, Try again;🫵😂')
         except:
             return
 
@@ -37,12 +37,12 @@ async def searchCMD(_, message: Message):
 @app.on_message(filters.command('stats'))
 async def stats(_, message: Message):
     try:
-        await message.reply_text('Use /stats1 For Day Wise Stats\nAnd /stats2 For Overall Stats')
+        await message.reply_text('Use /stats1, /todaystats For Day Wise Stats\nAnd /stats2, /overallstats For Overall Stats')
     except:
         return
 
 
-@app.on_message(filters.command('stats1'))
+@app.on_message(filters.command('stats1', 'todaystats'))
 async def stats1(_, message: Message):
     try:
         img = day()
@@ -51,7 +51,7 @@ async def stats1(_, message: Message):
         return
 
 
-@app.on_message(filters.command('stats2'))
+@app.on_message(filters.command('stats2', 'overallstats'))
 async def stats2(_, message: Message):
     try:
         img = over()
