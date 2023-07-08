@@ -17,7 +17,7 @@ async def start(_, message: Message):
 QUERY = '**Search Results:** `{}`'
 
 
-@app.on_message(filters.command(['search', 's', '']))
+@app.on_message(filters.command(['search', 's', 'giveme', 'animename']))
 async def searchCMD(_, message: Message):
     try:
         user = message.from_user.id
