@@ -61,8 +61,8 @@ async def stats2(_, message: Message):
 
 
 @app.on_message(filters.command(['help', '']))
-async def start(_, message: Message):
+async def help(_, message: Message):
     try:
-        await message.reply_text('To Get Started, Simply Use\n\n(**/search <anime name>,\n/find <anime name>,\n/iwant <anime name>.)\n\n(**HINT:**Choose Server5 for Downloading.**')
+        await message.reply_text('To Get Started, Simply Use\n\n(**/search <anime name>,\n/find <anime name>,\n/iwant <anime name>.**)\n\n(**HINT: Choose Server5 for Downloading.**')
     except:
         return
