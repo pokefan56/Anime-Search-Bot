@@ -6,7 +6,7 @@ from AniPlay.plugins.button import BTN
 from AniPlay.plugins.stats import day, over
 
 
-@app.on_message(filters.command(['start', 'ping', 'help', 'alive']))
+@app.on_message(filters.command(['start', '']))
 async def start(_, message: Message):
     try:
         await message.reply_text('#JaiShreeRam🚩,\nI‘m **ANIME SEARCH BOT** Created by- **@StupidBoi69**.\n\n**NOTE:** To Get Started, Simply Use\n(**"/s" or "/search"**)\nThen [**TYPE THE NAME OF ANIME**] You‘re Looking For And We‘ll Search Our Database to Find it For You.\n\n(**HINT:** Choose Server5 for Downloading.)\n\n╔══════════════════════╗\n┣**SEARCH ANIME LIKE THIS-**\n┃/s One Piece ✅\n┃/search Naruto ✅\n┃\n┣**DON‘T SEARCH LIKE THIS -**\n┃/s One Piece Episode 69 ❎\n┃/s Bleach English Dub ❎\n╚══════════════════════╝\n\n@AnimeDownloaderChat_Bot.')
@@ -56,5 +56,13 @@ async def stats2(_, message: Message):
     try:
         img = over()
         await message.reply_photo(img, caption='**AnimeDex | Overall Stats**')
+    except:
+        return
+
+
+@app.on_message(filters.command(['help', '']))
+async def start(_, message: Message):
+    try:
+        await message.reply_text('To Get Started, Simply Use\n\n(**/search <anime name>,\n/find <anime name>,\n/iwant <anime name>.)\n\n(**HINT:** Choose Server5 for Downloading.)\n\n╔══════════════════════╗\n┣**SEARCH ANIME LIKE THIS-**\n┃/s One Piece ✅\n┃/search Naruto ✅\n┃\n┣**DON‘T SEARCH LIKE THIS -**\n┃/s One Piece Episode 69 ❎\n┃/s Bleach English Dub ❎\n╚══════════════════════╝\n\n@AnimeDownloaderChat_Bot.')
     except:
         return
