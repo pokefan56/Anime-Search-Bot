@@ -9,7 +9,7 @@ from AniPlay.plugins.stats import day, over
 @app.on_message(filters.command(['start', '']))
 async def start(_, message: Message):
     try:
-        await message.reply_text('जय श्री राम🚩,\n.')
+        await message.reply_text('जय श्री राम🚩,\n\n**I‘m Anime Search Bot, Creator- @StupidBoi69.**\n\nClick on /help to learn **How to use?** ')
     except:
         return
 
