@@ -17,19 +17,19 @@ async def start(_, message: Message):
 QUERY = '**Search Results:** `{}`'
 
 
-@app.on_message(filters.command(['search', 's', 'gimme', 'iwant', 'find', '']))
+@app.on_message(filters.command(['search', 's', 'gimme', 'iwant', 'find', 'anime']))
 async def searchCMD(_, message: Message):
     try:
         user = message.from_user.id
         query = ' '.join(message.command[1:])
         if query == '':
-            return await message.reply_text('Give me something to search;🤬🖕')
+            return await message.reply_text('Give me something to search; after cmd =⁠_⁠= ')
         data = AnimeDex.search(query)
         button = BTN.searchCMD(user, data, query)
         await message.reply_text(QUERY.format(query), reply_markup=button)
     except Exception as e:
         try:
-            return await message.reply_text('**Anime Not Found...**\n\nMaybe Incorrect Name, Try again;🫵😂')
+            return await message.reply_text('**Anime Not Found...**\n\nProbably Incorrect Name, Try again')
         except:
             return
 
@@ -63,6 +63,6 @@ async def stats2(_, message: Message):
 @app.on_message(filters.command(['help', '']))
 async def help(_, message: Message):
     try:
-        await message.reply_text('To Get Started, Simply Use\n\n(**/search <anime name>,\n/find <anime name>,\n/iwant <anime name>.**)\n\n(**HINT: Choose Server5 for Downloading.**')
+        await message.reply_text('To Get Started, Simply Use\n\n(**/search ‹anime name›,\n/find ‹anime name›,\n/iwant ‹anime name›.**)\n\n(**HINT: Choose Server5 for Downloading.**')
     except:
         return
