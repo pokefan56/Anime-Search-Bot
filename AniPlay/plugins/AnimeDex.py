@@ -9,14 +9,14 @@ class AnimeDex:
         pass
 
     def search(query):
-        url = 'http://animedex.live/search?query=' + \
+        url = 'http://StupidBoi.vercel.app/search?query=' + \
             str(urllib.parse.quote(query))
         soup = bs(requests.get(url).content, 'html.parser')
         animes = []
 
         for anime in soup.find('div', 'divox').find_all('a'):
             title = anime.find('h3').text
-            url = 'http://animedex.live' + anime.get('href')
+            url = 'http://StupidBoi.vercel.app' + anime.get('href')
             animes.append((title, url))
         return animes
 
@@ -40,7 +40,7 @@ class AnimeDex:
         ep = []
         eps = soup.find_all('a', 'ep-btn')
         for i in eps:
-            ep.append((i.text, 'http://animedex.live' + i.get('href')))
+            ep.append((i.text, 'http://StupidBoi.vercel.app' + i.get('href')))
 
         return img, text, ep
 
@@ -51,7 +51,7 @@ class AnimeDex:
         sub = soup.find('div', 'server').find_all('div', 'sitem')
         surl = []
         for i in sub:
-            url = 'http://animedex.live' + \
+            url = 'http://StupidBoi.vercel.app' + \
                 i.find('a').get('data-value').split(' ')[0]
             surl.append((i.text.strip(), url))
 
@@ -59,7 +59,7 @@ class AnimeDex:
         durl = []
         if dub:
             for i in dub.find_all('div', 'sitem'):
-                url = 'http://animedex.live' + \
+                url = 'http://StupidBoi.vercel.app' + \
                     i.find('a').get('data-value').split(' ')[0]
                 durl.append((i.text.strip(), url))
 
